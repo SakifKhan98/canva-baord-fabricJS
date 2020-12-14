@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #objectButtonsWrapper {
   background-color: rgb(93, 88, 88);
   width: 100px;

@@ -203,7 +203,7 @@ const svgState = {};
 let mousePressed = false;
 let color = "#000000";
 let group = {};
-const bgUrl = "https://i.imgur.com/br4QMtv.jpg";
+const bgUrl = "https://i.imgur.com/Ljke4K0.jpg";
 
 let currentMode;
 const modes = {

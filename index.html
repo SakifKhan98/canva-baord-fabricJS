@@ -5,43 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canva Board</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<button onclick="toggleMode(modes.pan)">Toggle Pan</button>
-<button onclick="toggleMode(modes.drawing)">Toggle Drawing</button>
+<div class="p-5">
+    
+    <button class="btn btn-primary"onclick="toggleMode(modes.pan)">Toggle Pan</button>
+    <button class="btn btn-secondary" onclick="toggleMode(modes.drawing)">Toggle Drawing</button>
 
-<button onclick="clearCanvas(canvas, svgState)">Clear</button>
-<button onclick="restoreCanvas(canvas, svgState, bgUrl)">Restore</button>
-
-
-
-Color: <input id = "colorPicker" value="#000000" data-jscolor="">
+    <button class="btn btn-warning" onclick="clearCanvas(canvas, svgState)">Clear</button>
+    <button class="btn btn-danger" onclick="restoreCanvas(canvas, svgState, bgUrl)">Restore</button>
 
 
-<canvas id=canvas></canvas>
-
-<div id ="objectButtonsWrapper">
-    <p id="objectsTitle">Objects</p>
-    <div id="objectButtons">
-        <button onclick="createRect(canvas)">Rect</button>
-        <button onclick="createCirc(canvas)">Circ</button>
-    </div>
-        <button onclick="groupObjects(canvas, group, true)">Group</button>
-        <button onclick="groupObjects(canvas, group, false)">UnGroup</button>
+    Color: <input id = "colorPicker" value="#000000" data-jscolor="">
 </div>
 
-<div class ="buttonsWrapper">
-    <p class="buttonTitle">Image</p>
-    <input id="myImg" type="file" accept="image/">
 
+<div class="row">
+    <div class="px-5 col-md-5">
+        <canvas style="border: 1px solid black" class="shadow" id=canvas></canvas>
+    </div>
+    
+    <div class="col-md-4">
+        
+        
+        
+        <div class="card">
+  <div class="card-header">
+    Objects & Grouping
+  </div>
+  <div class="card-body">
+<div class="row">
+    <div class="col-md-6 my-2">
+        <h5 class="card-title">Add An Object</h5>
+        <button class="btn btn-primary" onclick="createRect(canvas)">Rect</button>
+        <button class="btn btn-danger"  onclick="createCirc(canvas)">Circ</button>
+    </div>
 
+    <div class="col-md-6 my-2">
+        <h5 class="card-title">Group or UnGroup</h5>
+        <button class="btn btn-success"  onclick="groupObjects(canvas, group, true)">Group</button>
+        <button class="btn btn-warning" onclick="groupObjects(canvas, group, false)">UnGroup</button>
+    </div>
+</div>
+  </div>
+  <div class="card-footer">
+    <div class ="buttonsWrapper">
+        <p class="buttonTitle">Upload An Image</p>
+        <input id="myImg" type="file" accept="image/">
+    </div>
+  </div>
+</div>
+    </div>
 </div>
 
 <script src="./lib/jscolor.js"></script>
 <script src="./lib/fabric.min.js"></script>
 <script src="./index.js"></script>
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <body>
     
 </body>
